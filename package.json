@@ -1,0 +1,49 @@
+{
+  "name": "electron-test-app",
+  "version": "0.0.0",
+  "description": "A minimal Electron application",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder --linux",
+    "publish": "electron-builder --linux -p always"
+  },
+  "repository": "https://github.com/khanshy/electronTestApp.git",
+  "keywords": [
+    "Electron",
+    "quick",
+    "start",
+    "test",
+    "app"
+  ],
+  "author": "khanshy <shaheryarkhan1008@gmail.com>",
+  "license": "CC0-1.0",
+  "devDependencies": {
+    "electron": "^9.1.0",
+    "electron-builder": "^22.11.7"
+  },
+  "build": {
+    "appId": "khanshy01",
+    "asar": false,
+    "icon": "dist/512x512.png",
+    "linux": {
+      "publish": {
+        "provider": "github",
+        "owner": "khanshy",
+        "repo": "electronTestApp01",
+        "token": "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",
+        "private": true,
+        "releaseType": "release",
+        "publishAutoUpdate": true
+      },
+      "target": [
+        "AppImage",
+        "deb"
+      ]
+    }
+  },
+  "dependencies": {
+    "electron-updater": "^4.3.9"
+  }
+}
