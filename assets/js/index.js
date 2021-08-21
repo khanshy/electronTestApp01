@@ -1,7 +1,7 @@
 window.api.listen('update', (e, res) => {
     console.log(res);
 });
-$("#myCanvas").css({"width":"100%","max-height":"580px"});
+$("#myCanvas").css({"width":"100%","height":"100%"});
 
 var cloudParticles = [];
 var scene = new THREE.Scene();
