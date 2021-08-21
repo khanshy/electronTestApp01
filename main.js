@@ -2,19 +2,44 @@
 const {app, BrowserWindow, dialog} = require('electron');
 const { autoUpdater } = require("electron-updater");
 const path = require('path');
-let main;
+let main = {};
+let splashScreen = {};
 
 function createWindow () {
+    // create a splash screen
+    splashScreen = new BrowserWindow({
+        width: 640,
+        height: 400,
+        resizable: false,
+        show: false,
+        frame: false
+    });
+
     // Create the browser window.
     main = new BrowserWindow({
         width: 800,
         height: 600,
         webPreferences: {
             preload: path.join(__dirname, 'preload.js')
-        }
+        },
+        show: false,
     });
-    // and load the index.html of the app.
+
+    // load splash-screen of the app.
+    splashScreen.loadFile("./assets/screens/splash-screen.html");
+    splashScreen.once('ready-to-show', () => {
+        splashScreen.show();
+        // splashScreen.webContents.openDevTools();
+    });
+
+    // load the index.html of the app.
     main.loadFile('index.html');
+    main.once('ready-to-show', () => {
+        setTimeout(() => {
+            splashScreen.close();
+            main.show();
+        }, 3000);
+    });
 
     // Open the DevTools.
     main.webContents.openDevTools();

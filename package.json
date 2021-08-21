@@ -20,7 +20,7 @@
   "author": "khanshy <shaheryarkhan1008@gmail.com>",
   "license": "CC0-1.0",
   "devDependencies": {
-    "electron": "^9.1.0",
+    "electron": "^13.2.1",
     "electron-builder": "^22.11.7"
   },
   "build": {

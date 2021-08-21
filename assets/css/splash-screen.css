@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab:100,300,400,700&display=swap');
+
+.splash-container {
+    display: flex; height: 400px; width: 640px; background-size: 620px 400px;
+    background-image: url("../img/splash-screen-bg.svg"); background-repeat: no-repeat;
+    background-position: 48px;
+}
+.splash-container h2 { position: absolute; top: 172px; left: 264px; color: white; font-family: 'Roboto Slab', serif; }
+#progress-bar { width: 400px; margin: auto; margin-bottom: 64px; }
+#progress-bar-bg { 
+    width: 100%; height: 4px; background-color: #5bf8fd; border-radius: 1px;
+    box-shadow: 0 0 25px 0 rgba(48, 214, 214, 0.15);
+}
